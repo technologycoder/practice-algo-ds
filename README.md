@@ -5,7 +5,3 @@ Java implementations and study notes for learning algorithms, data structures, a
 ## Study guides
 
 - [Recursion](docs/recursion/recursion.md) — fundamentals, tail recursion, factorial, Fibonacci, and Towers of Hanoi.
-
-## Code
-
-Java implementations are in [src/main/java](src/main/java).
