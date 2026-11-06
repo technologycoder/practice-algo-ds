@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Fibonacci {
 
+    /** Demonstrates the same Fibonacci result using all three approaches. */
     public static void main(String[] args) {
         int num = 10;
         System.out.println("Iterative Fibonacci of " + num + " is: " + fibonacciIterative(num));
@@ -11,6 +12,11 @@ public class Fibonacci {
         System.out.println("Memoized Fibonacci of " + num + " is: " + fibonacciMemoized(num));
     }
 
+    /**
+     * Calculates F(num), with F(0) = 0 and F(1) = 1, keeping the previous two values.
+     * Accepts 0-92, the range whose Fibonacci results fit in long.
+     * O(n) time and O(1) auxiliary space.
+     */
     static long fibonacciIterative(int num) {
         if (num < 0 || num > 92) {
             throw new IllegalArgumentException("num must be between 0 and 92");
@@ -30,7 +36,11 @@ public class Fibonacci {
         return current;
     }
 
-    // Use small inputs: repeated calculations make this version exponential.
+    /**
+     * Calculates F(num) directly from F(num - 1) + F(num - 2), without caching.
+     * Accepts 0-92, but use small inputs (about 30 or less) because work repeats.
+     * O(2^n) time upper bound and O(n) stack space; addition makes it non-tail-recursive.
+     */
     static long fibonacciRecursive(int num) {
         if (num < 0 || num > 92) {
             throw new IllegalArgumentException("num must be between 0 and 92");
@@ -43,6 +53,11 @@ public class Fibonacci {
         return fibonacciRecursive(num - 1) + fibonacciRecursive(num - 2);
     }
 
+    /**
+     * Calculates F(num) using recursion and a fresh cache shared by that call's helpers.
+     * Accepts 0-92. Each non-base result is computed once; separate calls start fresh.
+     * O(n) time and O(n) auxiliary space for the cache and recursion stack.
+     */
     static long fibonacciMemoized(int num) {
         if (num < 0 || num > 92) {
             throw new IllegalArgumentException("num must be between 0 and 92");
@@ -53,6 +68,10 @@ public class Fibonacci {
         return fibonacciMemoized(num, memo);
     }
 
+    /**
+     * Reuses cached results; -1 marks entries not yet computed.
+     * Addition and cache assignment follow the recursive calls, so this is not tail recursive.
+     */
     private static long fibonacciMemoized(int num, long[] memo) {
         if (num <= 1) {
             return num;
