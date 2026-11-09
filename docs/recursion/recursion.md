@@ -42,5 +42,10 @@ No. Choose a clear, correct algorithm first.
 - [Factorial](factorial.md)
 - [Fibonacci](fibonacci.md)
 - [Towers of Hanoi](towers-of-hanoi.md)
+- [Combinations](combinations.md)
+- [Permutations](permutations.md)
+- [Binary search](binary-search.md)
+- [Coin change](coin-change.md)
+- [0/1 knapsack](knapsack.md)
 
 For these introductory Big-O comparisons, count arithmetic and printing one fixed-size value or move as constant-cost operations. Include active recursive calls in space analysis; Java does not guarantee tail-call elimination.

@@ -4,4 +4,4 @@ Java implementations and study notes for learning algorithms, data structures, a
 
 ## Study guides
 
-- [Recursion](docs/recursion/recursion.md) — fundamentals, tail recursion, factorial, Fibonacci, and Towers of Hanoi.
+- [Recursion](docs/recursion/recursion.md) — fundamentals, tail recursion, factorial, Fibonacci, Towers of Hanoi, combinations, permutations, binary search, coin change, and 0/1 knapsack.
